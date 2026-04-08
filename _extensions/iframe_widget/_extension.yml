@@ -3,7 +3,7 @@ author: Felix Boy
 version: 0.1.0
 contributes:
   shortcodes: 
-    - iframe-widget.lua
+    - iframe_widget.lua
   formats:
     revealjs:
-      include-after-body: iframe-widget.js
+      include-after-body: iframe_widget.js

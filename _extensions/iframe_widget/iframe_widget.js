@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Find all iframe widgets on the page
-    const widgets = document.querySelectorAll('.iframe-widget');
+    const widgets = document.querySelectorAll('.iframe_widget');
 
     widgets.forEach(widget => {
         const targetIframe = widget.querySelector('.z-target');
