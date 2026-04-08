@@ -1,0 +1,9 @@
+title: Iframe Widget
+author: Felix Boy
+version: 0.1.0
+contributes:
+  shortcodes: 
+    - iframe-widget.lua
+  formats:
+    revealjs:
+      include-after-body: iframe-widget.js
