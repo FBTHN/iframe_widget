@@ -1,25 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Find all iframe widgets on the page
-    const widgets = document.querySelectorAll('.iframe_widget');
+document.addEventListener('click', (event) => {
+    // 1. Check if the clicked element was one of our widget buttons
+    const button = event.target.closest('.z-btn');
+    if (!button) return;
 
-    widgets.forEach(widget => {
-        const targetIframe = widget.querySelector('.z-target');
-        const buttons = widget.querySelectorAll('.z-btn');
+    // 2. Find the specific widget container for THIS button
+    const widget = button.closest('.iframe_widget');
+    if (!widget) return;
 
-        buttons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                // Get the target z-index from the button's data attribute
-                const newZ = button.getAttribute('data-z');
+    // 3. Apply the z-index to the iframe
+    const targetIframe = widget.querySelector('.z-target');
+    const newZ = button.getAttribute('data-z');
 
-                // Set the iframe's z-index
-                if (targetIframe) {
-                    targetIframe.style.zIndex = newZ;
-                }
+    if (targetIframe) {
+        targetIframe.style.zIndex = newZ;
+    }
 
-                // Update the 'active' class on buttons within this widget
-                buttons.forEach(btn => btn.classList.remove('active'));
-                event.currentTarget.classList.add('active');
-            });
-        });
-    });
+    // 4. Update the 'active' class styling
+    const allButtons = widget.querySelectorAll('.z-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 });
