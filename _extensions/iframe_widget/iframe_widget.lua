@@ -34,7 +34,7 @@ function iframe_widget(args)
   local html_template = [[
 <div class="iframe_widget" style="%s">
   <svg
-      style="position: absolute; inset:0; width: 100%; height: 100%; z-index: 49;"
+      style="position: absolute; inset:0; width: 100%%; height: 100%%; z-index: 49;"
       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   </svg>
 
