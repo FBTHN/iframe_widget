@@ -1,3 +1,8 @@
+.iframe_widget {
+    background-color: white;
+    z-index: 50;
+}
+
 .z-target {
     position: absolute;
     width: 100%;
