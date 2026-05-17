@@ -38,6 +38,7 @@ return {
       top = "72px",
       width = "612px",
       height = "540px",
+      padding = "0px",
       borderRadius = "16px",
       border = "1px solid black",
       boxShadow = "0 2px 8px rgba(0, 0, 0, 0.15)"
@@ -49,6 +50,7 @@ return {
     local top          = to_str(kwargs.top) or defaults.top
     local width        = to_str(kwargs.width) or defaults.width
     local height       = to_str(kwargs.height) or defaults.height
+    local padding      = to_str(kwargs.padding) or defaults.padding
     local borderRadius = to_str(kwargs.borderRadius) or defaults.borderRadius
     local border       = to_str(kwargs.border) or defaults.border
     local boxShadow    = to_str(kwargs.boxShadow) or defaults.boxShadow
@@ -60,6 +62,7 @@ return {
     table.insert(style_parts, "top: " .. top .. ";")
     table.insert(style_parts, "width: " .. width .. ";")
     table.insert(style_parts, "height: " .. height .. ";")
+    table.insert(style_parts, "padding: " .. padding .. ";")
     table.insert(style_parts, "border-radius: " .. borderRadius .. ";")
     table.insert(style_parts, "border: " .. border .. ";")
     table.insert(style_parts, "box-shadow: " .. boxShadow .. ";")
@@ -83,7 +86,8 @@ return {
   </svg>
 
   <div class="iframe-wrapper">
-    <iframe class="z-target" style="z-index: 50;" src="]] .. src .. [[">
+    <iframe class="z-target" style="z-index: 50;" data-external="1" src="]] ..
+        src .. [[" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen="true">
     </iframe>
   </div>
 
